@@ -146,17 +146,6 @@ streamlit
 
 ---
 
-## 👩‍💻 Author
-
-**Tanvi Powar**
-
-Final Year Computer Engineering Student
-
-- GitHub: https://github.com/Tanvipowar11
-- LinkedIn: https://www.linkedin.com/in/tanvipowar/
-
----
-
 ## ⭐ Support
 
 If you found this project helpful, consider giving it a ⭐ on GitHub.
