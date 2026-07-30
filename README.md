@@ -1,104 +1,166 @@
-# Character Chatbot
+# 🎭 Character Chatbot
 
-A simple terminal chatbot that lets you pick a character personality and chat
-with it using the Groq API (`llama-3.3-70b-versatile`).
+An interactive AI-powered chatbot built with **Python**, **Streamlit**, and the **Groq API** that lets users chat with different AI personalities or create their own custom character.
 
-## Setup
+---
 
-1. **Install dependencies**
+## 🚀 Features
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+- 🎭 Chat with predefined AI characters:
+  - Sherlock Holmes
+  - Yoda
+  - Tony Stark
+- ✨ Create your own custom AI character
+- 💬 Real-time conversational interface
+- 🧠 Maintains conversation history
+- 🔄 Switch characters anytime to start a fresh conversation
+- 🗑️ Clear chat history with one click
+- ⚡ Powered by Groq's **Llama 3.3 70B Versatile** model
+- 🌐 Simple and responsive Streamlit web interface
 
-2. **Add your API key**
+---
 
-   Copy `.env.example` to `.env` and paste in your real Groq API key:
+## 🛠️ Tech Stack
 
-   ```bash
-   cp .env.example .env
-   ```
+- **Python**
+- **Streamlit**
+- **Groq API**
+- **Python Dotenv**
 
-   Then edit `.env` so it looks like:
+---
 
-   ```
-   GROQ_API_KEY=gsk_your_real_key_here
-   ```
+## 📂 Project Structure
 
-3. **Run it**
-
-   ```bash
-   python chatbot.py
-   ```
-
-## How it works
-
-- `CHARACTERS` is a dictionary of preset personalities (Sherlock Holmes,
-  Yoda, Tony Stark) plus a "Custom Character" option where you type your own
-  description at runtime.
-- `choose_character()` prints a menu and validates your input.
-- `chat_with_character()` starts a fresh `messages` list with the character's
-  system prompt as the **first and only** system message, then appends each
-  user message and assistant reply so the model keeps full context.
-- Type `switch` during a chat to go back to the character menu, or `quit` to
-  exit.
-
-## Adding your own characters
-
-Open `chatbot.py` and add a new entry to the `CHARACTERS` dictionary:
-
-```python
-"5": {
-    "name": "Your Character Name",
-    "system_prompt": "You are ... (describe personality and speech style).",
-},
+```
+Character-Chatbot/
+│── app.py
+│── requirements.txt
+│── README.md
+│── .env.example
+│── .gitignore
 ```
 
-## Web App Version (Streamlit)
+---
 
-There's also a browser-based version, `app.py`, built with
-[Streamlit](https://streamlit.io) — a Python library that turns a script
-into a web app without writing any HTML/CSS/JavaScript.
+## 📦 Installation
 
-1. Install the extra dependency (already in `requirements.txt`):
+### 1. Clone the repository
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+```bash
+git clone https://github.com/YOUR_USERNAME/Character-Chatbot.git
+cd Character-Chatbot
+```
 
-2. Run it:
+### 2. Install dependencies
 
-   ```bash
-   streamlit run app.py
-   ```
+```bash
+pip install -r requirements.txt
+```
 
-3. It will automatically open a browser tab (usually at
-   `http://localhost:8501`). Pick a character from the sidebar, or type a
-   custom character description, and start chatting.
+### 3. Create a `.env` file
 
-### How the web version differs from the terminal version
+Create a file named `.env` in the project directory.
 
-- Instead of `input()` and `print()`, it uses `st.chat_input()` and
-  `st.chat_message()` to build a chat interface.
-- Since Streamlit reruns the whole script on every interaction, it uses
-  `st.session_state` to remember the conversation between reruns (otherwise
-  the chat history would reset every time you sent a message).
-- Switching characters in the sidebar automatically starts a new
-  conversation, same as `switch` did in the terminal version.
+Add your Groq API key:
 
-### Sharing it with others
+```env
+GROQ_API_KEY=your_groq_api_key
+```
 
-Running `streamlit run app.py` only makes it available on your own computer.
-To share it with someone else without them installing anything, you can
-deploy it for free on [Streamlit Community Cloud](https://streamlit.io/cloud) —
-just push this project to a GitHub repo and connect it there. (You'd add
-your API key as a "secret" in Streamlit Cloud's settings instead of a local
-`.env` file, since `.env` shouldn't be uploaded to GitHub.)
+> **Note:** Never upload your `.env` file to GitHub.
 
-## Notes
+### 4. Run the application
 
-- Each character conversation is independent — switching characters starts a
-  brand new `messages` list, so personalities don't bleed into each other.
-- If an API call fails (e.g. bad key, rate limit, network issue), the error
-  is caught and printed instead of crashing the program, so you can just try
-  again.
+```bash
+streamlit run app.py
+```
+
+The application will open in your browser at:
+
+```
+http://localhost:8501
+```
+
+---
+
+## 🎮 How to Use
+
+1. Select a predefined character from the sidebar.
+2. Or enter your own custom character description.
+3. Type your message in the chat box.
+4. Continue the conversation naturally.
+5. Switch characters or clear the conversation whenever you like.
+
+---
+
+## 📸 Preview
+
+<img width="900" alt="Character Chatbot" src="https://via.placeholder.com/900x450.png?text=Character+Chatbot+Screenshot">
+
+> Replace this image with an actual screenshot of your application.
+
+---
+
+## 🤖 Available Characters
+
+| Character | Personality |
+|-----------|-------------|
+| Sherlock Holmes | Intelligent detective with logical reasoning |
+| Yoda | Wise Jedi Master with unique speech style |
+| Tony Stark | Funny, sarcastic and highly intelligent |
+
+Users can also create unlimited custom personalities.
+
+---
+
+## 📌 Future Improvements
+
+- Voice input and output
+- Multiple AI model selection
+- Save chat history
+- Export conversations
+- Dark/Light theme toggle
+- User authentication
+- Chat streaming responses
+- More built-in characters
+
+---
+
+## 🔐 Environment Variables
+
+Create a `.env` file:
+
+```env
+GROQ_API_KEY=your_groq_api_key
+```
+
+---
+
+## 📄 Requirements
+
+```
+groq
+python-dotenv
+streamlit
+```
+
+---
+
+## 👩‍💻 Author
+
+**Tanvi Powar**
+
+Final Year Computer Engineering Student
+
+- GitHub: https://github.com/Tanvipowar11
+- LinkedIn: https://www.linkedin.com/in/tanvipowar/
+
+---
+
+## ⭐ Support
+
+If you found this project helpful, consider giving it a ⭐ on GitHub.
+
+It helps others discover the project and motivates further development.
+
+---
