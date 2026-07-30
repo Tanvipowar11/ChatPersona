@@ -95,10 +95,9 @@ http://localhost:8501
 
 ## 📸 Preview
 
-<img width="900" alt="Character Chatbot" src="https://via.placeholder.com/900x450.png?text=Character+Chatbot+Screenshot">
+<img width="1917" height="922" alt="image" src="https://github.com/user-attachments/assets/6283c8d5-f851-469b-9a84-4cd69d1b4083" />
 
-> Replace this image with an actual screenshot of your application.
-
+ 
 ---
 
 ## 🤖 Available Characters
